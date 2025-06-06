@@ -1,0 +1,6 @@
+CREATE FUNCTION fn_FormatDate_MMDDYYYY (@InputDate DATETIME)
+RETURNS VARCHAR(10)
+AS
+BEGIN
+    RETURN FORMAT(@InputDate, 'MM/dd/yyyy')
+END;
