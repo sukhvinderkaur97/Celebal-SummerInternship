@@ -78,21 +78,3 @@ BEGIN
 END$$
 
 DELIMITER ;
-
-CALL AllotSubjects();
-
-SELECT * FROM Allotments;
-
-SELECT * FROM UnallotedStudents;
-
-SELECT * FROM SubjectDetails;
-
-SELECT 
-    sd.StudentId,
-    sd.StudentName,
-    sd.GPA,
-    a.SubjectId,
-    s.SubjectName
-FROM StudentDetails sd
-LEFT JOIN Allotments a ON sd.StudentId = a.StudentId
-LEFT JOIN SubjectDetails s ON a.SubjectId = s.SubjectId;
